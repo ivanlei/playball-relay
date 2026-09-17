@@ -20,6 +20,19 @@ Turn on KoLmafia's own choice spoilers to get the effect notes under each button
 set relayShowSpoilers=true
 ```
 
+## Examples
+
+A major pitch on offer: both minor pitches of that element have been thrown, so the Schenectady
+Scorcher is up, marked `●● → gets an out`. The lineup box has moved to the left, away from the
+batter.
+
+![A major pitch on offer](/playball_relay01.png)
+
+After throwing it: the batter shows the pitch they got, KoL marks the out with an X, and hot now
+reads `✓ Schenectady Scorcher thrown`, since an element's major is only offered once an inning.
+
+![After throwing a major pitch](/playball_relay02.png)
+
 ## What it changes
 
 - **Pitches move into the lineup box**, under the list of batters, instead of sitting near the
