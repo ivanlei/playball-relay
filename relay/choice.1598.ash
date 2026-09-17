@@ -368,11 +368,8 @@ string decoratePlayBall(string page, string submittedOption) {
 	}
 
 	// The heading only repeats what the box obviously is, and its padding pushes
-	// the batters down; both anchors above have been matched by now. KoL wraps
-	// the batter list in <small>, which is hard to read against the stadium, so
-	// that goes too and the names render at the box's own size.
+	// the batters down; both anchors above have been matched by now.
 	moved = moved.replace_string("<center><b>Lineup</b><br><br></center>", "");
-	moved = moved.replace_string("<small>", "").replace_string("</small>", "");
 	moved = moved.replace_string("id=\"pbLineup\" style=\"position: absolute; width: 280px;",
 		"id=\"pbLineup\" style=\"position: absolute; width: 280px; padding-top: 0.5em;");
 
