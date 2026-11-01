@@ -359,11 +359,20 @@ string decoratePlayBall(string page, string submittedOption) {
 	// the batters and buttons stay fully opaque. At 0.7 the stadium's line art
 	// made the text hard to read, so it's mostly opaque, and a white glow behind
 	// the text keeps letters clear where lines pass behind them.
+	//
+	// THE INK IS SAID OUT LOUD, because the background is. KoL's stadium is a
+	// white image and this box sits on it, so the box stays light whatever the
+	// page around it is doing -- and a relay running a dark theme sets the
+	// page's text colour to something pale, which this box would otherwise
+	// inherit. Pale letters, on white, inside a white glow: the roster was
+	// there and could not be read. An element that paints its own background
+	// is the one that knows what ink belongs on it.
 	matcher lineupBox = create_matcher("(?s)(<div )(style=\"[^\"]*?)background: white;([^\"]*\">\\s*<center><b>Lineup</b>)", moved);
 	if (lineupBox.find()) {
 		moved = moved.replace_string(lineupBox.group(0),
 			lineupBox.group(1) + "id=\"pbLineup\" " + lineupBox.group(2)
-			+ "background: rgba(255, 255, 255, 0.85); text-shadow: 0 0 2px white, 0 0 4px white;"
+			+ "background: rgba(255, 255, 255, 0.85); color: black;"
+			+ " text-shadow: 0 0 2px white, 0 0 4px white;"
 			+ lineupBox.group(3));
 	}
 
